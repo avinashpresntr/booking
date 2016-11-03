@@ -1,0 +1,54 @@
+@import 'variable';
+
+/* LOGIN PAGE */
+.dip-main{
+	min-height: 570px;
+	background: url(../img/login_bg.jpg) 100% center rgba(0, 0, 0);
+	position: relative;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	.container{
+		position: relative;
+		z-index: 10;
+	}
+	&:before{
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(0, 0, 0, 0.38);
+		z-index: 1;
+	}
+	form{
+		position: relative;
+		z-index: 100;
+	}
+}
+.dip-banner{
+	margin-top: 10em;
+	@media (max-width:768px){margin-top: 7em;}
+	@media (max-width:480px){margin-top: 5em;}
+
+	h2,p{
+		color:white;
+	}
+	h2{
+		font-size: 3em;
+	}
+	p{
+		color: rgba(white,.8);
+		font-size: 1.5em;
+	}
+}
+.dip-loginform{
+	width: 350px;
+	@media (max-width:480px){width: 90%;}
+	margin: 50px auto 20px auto;
+	label{
+		color: #FFF;
+		display: none;
+	}
+}

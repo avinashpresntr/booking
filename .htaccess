@@ -1,0 +1,23 @@
+# File modified on Tue Sep 15 07:02:06 2015 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value memory_limit "512M" 
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value upload_max_filesize "100M" 
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value post_max_size "100M" 
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} ^/(?!source)
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
+ 
+<IfModule !mod_rewrite.c>
+  # If we don't have mod_rewrite installed, all 404's
+  # can be sent to index.php, and everything works as normal.
+  # Submitted by: ElliotHaughin
+ 
+  ErrorDocument 404 /index.php
+</IfModule>

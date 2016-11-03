@@ -1,0 +1,172 @@
+/* line 6, ../scss/jqgrid.scss */
+.ui-jqgrid.ui-widget-content {
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+/* line 9, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-widget-content {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+/* line 12, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-hbox {
+  float: none;
+  padding: 0;
+}
+/* line 16, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-bdiv {
+  background: transparent;
+}
+@media (min-width: 1080px) {
+  /* line 16, ../scss/jqgrid.scss */
+  .ui-jqgrid .ui-jqgrid-bdiv {
+    overflow-x: hidden;
+  }
+}
+/* line 23, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-htable th {
+  height: 35px;
+  padding: 0 2px 0 2px;
+}
+/* line 28, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-htable {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+/* line 31, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-view {
+  font-size: inherit;
+}
+/* line 34, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-view a.dip-ibtn, .ui-jqgrid .ui-jqgrid-view button.dip-ibtn {
+  font-size: 0;
+  padding: 5px;
+  color: #FFF;
+}
+/* line 38, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-view a.dip-ibtn i, .ui-jqgrid .ui-jqgrid-view button.dip-ibtn i {
+  font-size: 11px;
+}
+/* line 42, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-state-hover {
+  background: rgba(0, 126, 247, 0.08);
+}
+/* line 48, ../scss/jqgrid.scss */
+.ui-jqgrid tr.jqgrow td {
+  height: 35px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  text-align: center;
+}
+/* line 56, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid {
+  background: rgba(0, 0, 0, 0.08);
+}
+/* line 58, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-jqgrid-htable th {
+  height: 20px;
+  background: ghostwhite;
+}
+/* line 65, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-widget-content {
+  background: transparent;
+  border: none;
+}
+/* line 69, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-jqgrid-btable tr td {
+  background: #FFF;
+}
+/* line 71, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-jqgrid-btable tr td.subgrid-cell {
+  background-color: inherit;
+}
+/* line 75, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-jqgrid-pager {
+  background: #EBEBEB;
+}
+/* line 78, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid .ui-jqgrid-btable .ui-pager-control tr {
+  background: transparent;
+}
+/* line 82, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-sgcollapsed {
+  width: 10px;
+}
+/* line 83, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid td.subgrid-cell {
+  background: rgba(123, 120, 120, 0.17);
+}
+/* line 85, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-subgrid td.subgrid-cell span {
+  display: none;
+}
+/* line 87, ../scss/jqgrid.scss */
+.ui-jqgrid .dip-switch {
+  margin: 0 auto;
+}
+
+/* line 91, ../scss/jqgrid.scss */
+.ui-widget {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 95, ../scss/jqgrid.scss */
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl, .ui-corner-right, .ui-corner-tr, .ui-corner-bottom, .ui-corner-bl, .ui-corner-br {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -khtml-border-radius: 0;
+}
+
+/* line 102, ../scss/jqgrid.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: rgba(0, 0, 0, 0.02);
+  border: none;
+}
+/* line 105, ../scss/jqgrid.scss */
+.ui-state-default .s-ico, .ui-widget-content .ui-state-default .s-ico, .ui-widget-header .ui-state-default .s-ico {
+  display: inline;
+}
+
+/* line 110, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-pager {
+  font-size: inherit;
+  padding: 5px !important;
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
+}
+/* line 116, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-button .ui-pg-div {
+  font-weight: bold;
+  padding: 5px;
+  border: none;
+  margin: 0;
+}
+/* line 122, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-button.ui-state-hover {
+  border: none;
+  margin: 0;
+}
+/* line 127, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-table td {
+  padding: 0;
+}
+
+/* line 129, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-state-hover, .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  background: transparent;
+}
+
+/* line 132, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-pg-input, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-input, .ui-jqgrid .ui-pg-selbox, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-selbox {
+  height: auto;
+}
+
+/* line 135, ../scss/jqgrid.scss */
+.ui-jqgrid .ui-jqgrid-view button.dip-ibtn-up, .ui-jqgrid .ui-jqgrid-view button.dip-ibtn-down {
+  color: #000;
+}
+
+/* line 138, ../scss/jqgrid.scss */
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
+  background: rgba(228, 228, 228, 0.1);
+  opacity: 1;
+}

@@ -1,0 +1,50 @@
+.navbar-brand {
+	padding:9px;
+} 
+
+.navbar {
+    margin-bottom:0;
+}
+.cover{
+	width:100%;
+	height:200px;
+	background-color:blue;
+	margin:0px;
+	z-index: -1;
+}
+
+ .over
+ {
+ 	position:absolute;
+    top: 135px;
+    z-index: 1;
+    display:inline-block;
+ }
+
+ .name{
+ 	float:right;
+ 	padding-left:20px;
+ 	color:white;
+ }
+
+ .icon{
+ 	float:right;
+ 	color:white;
+ 	padding:50px;
+ 	text-align:center;
+ }
+/* side bar  */
+.list-group{
+	width: 304px;
+	margin-top:20px;
+}
+.bs-example{
+	margin-top:20px;
+	margin-left:10px;
+}
+
+.firstblock{
+	
+	background-color:white;
+	box-shadow:0 0 5px rgba(0,0,0,.5);
+	}

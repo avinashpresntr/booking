@@ -1,0 +1,78 @@
+/*
+Error: wrong number of arguments (3 for 4) for `rgba'
+        on line 6 of D:/localhost/golfapp/assets/scss/login.scss
+
+1: @import 'variable';
+2: 
+3: /* LOGIN PAGE *\/
+4: .dip-main{
+5: 	min-height: 570px;
+6: 	background: url(../img/login_bg.jpg) 100% center rgba(0, 0, 0);
+7: 	position: relative;
+8: 	-webkit-background-size: cover;
+9: 	     -o-background-size: cover;
+10: 	        background-size: cover;
+11: 	.container{
+
+Backtrace:
+D:/localhost/golfapp/assets/scss/login.scss:6
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/funcall.rb:303:in `reformat_argument_error'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/funcall.rb:146:in `rescue in _perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/funcall.rb:123:in `_perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/list_literal.rb:63:in `map'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `map'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/engine.rb:268:in `render'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:44:in `call'
+C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+C:/Ruby/bin/compass:23:in `load'
+C:/Ruby/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: wrong number of arguments (3 for 4) for `rgba'\A         on line 6 of D:/localhost/golfapp/assets/scss/login.scss\A \A 1: @import 'variable';\A 2: \A 3: /* LOGIN PAGE */\A 4: .dip-main{\A 5: 	min-height: 570px;\A 6: 	background: url(../img/login_bg.jpg) 100% center rgba(0, 0, 0);\A 7: 	position: relative;\A 8: 	-webkit-background-size: cover;\A 9: 	     -o-background-size: cover;\A 10: 	        background-size: cover;\A 11: 	.container{"; }

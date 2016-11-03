@@ -1,0 +1,345 @@
+<section class="dip-dash-sec">
+  <h3><?=$page['desc'];?></h3>
+  <?php echo form_open_multipart(current_full_url(), 'class="dip-form form-horizontal"');?>
+    <?php echo get_alerts('golfclub/courses', 'Course'); ?>
+    <div class="dip-form-body">
+      
+      <fieldset>
+      <legend>Genaral:</legend>
+      <div class="row">
+        <?php foreach ($client->languages as $key => $value):?>
+          <div class="col-sm-4">
+            <?php
+            $default = '';
+            $required = '';
+            if($value==$client->default_language){
+              $default = 'default';
+              $required = 'required';
+            }
+            $r_name = '';
+            $r_descr = '';
+            if(isset($row->name[$value]))
+              $r_name = $row->name[$value];
+            if(isset($row->descr[$value]))
+              $r_descr = $row->descr[$value];
+            ?>
+            <div class="dip-langbox <?=$default;?>">
+              <h5><?php echo $langs[$value];?> <i class="flag flag-<?php echo $langs[$value];?>" alt="<?php echo $langs[$value];?>"></i></h5>
+              <label class="control-label" for="dipName">Course Name</label>
+              <?php echo form_input('name['.$value.']', set_value('name['.$value.']',$r_name), 'class="form-control" id="dipName'.$value.'" placeholder="Name" '.$required);?>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+      </fieldset>
+      <div class="row">
+        <div class="col-sm-7">
+          <fieldset>
+            <legend>Course Details:</legend>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipHoles">Holes</label>
+              <div class="col-sm-3 nopd">
+                <?php echo form_input('holes', set_value('holes',$row->holes), 'class="form-control" id="dipHoles" placeholder="Number of Holes"');?>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipPar">Par</label>
+              <div class="col-sm-3 nopd">
+                <?php echo form_input('par', set_value('par',$row->par), 'class="form-control" id="dipPar" placeholder="Par"');?>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipLength">Length</label>
+              <div class="col-sm-3 nopd">
+                <?php echo form_input('length', set_value('length',$row->length), 'class="form-control" id="dipLength" placeholder="Length"');?>
+              </div>
+              <div class="col-sm-3 nopd">
+                <?php echo form_dropdown('length_unit', array('meter'=>'Meter','yard'=>'Yard'),$row->length_unit, 'id="dipLengthUnit" class="form-control"'); ?>
+              </div>
+            </div>
+            <!--added-->
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipRange">Green Fee Range</label>
+              <div class="col-sm-7 form-inline dip-form-tab nopd" id="dip-grang">
+                
+                <!-- price options -->              
+                <label><?php echo form_radio('price_opt','1',((empty($row->range_to) && $row->range_from!='On request')?true:false),'style="width:auto;" onclick="change_fee(1)"'); ?> Fixed price</label>
+                <label><?php echo form_radio('price_opt','2',(!empty($row->range_to)?true:false),'style="width:auto;" onclick="change_fee(2)"'); ?> Price Range</label>                
+                <label><?php echo form_radio('price_opt','3',($row->range_from =='On request'?true:false),'style="width:auto;" onclick="change_fee(3)"'); ?> On request</label>                
+                
+                <div id="dipRang1" <?php echo ((!empty($row->range_to)||$row->range_from=='On request')?'style="display:none;"':'');?>>
+                <?php if($row->range_from=='On request'){$row->range_from=0;} ?>
+                <?php echo form_input('range_from', set_value('range_from',$row->range_from), 'id="dipRange" class="form-control" placeholder="0" style="display:inline-block;width:120px;" '.(empty($row->range_to)?'':'disabled'));?>
+                <?php echo form_dropdown('range_currency',$currencies,$row->range_currency, 'id="dipRangeCurrency" class="form-control"'); ?>
+                </div>
+                
+                <div id="dipRang2" <?php echo (empty($row->range_to)?'style="display:none;"':'');?>>
+                From <?php echo form_input('range_from', set_value('range_from',$row->range_from), 'class="form-control" id="dipRange" placeholder="0" style="display:inline-block;width:75px;"'.(empty($row->range_to)?'disabled':''));?>
+                to <?php echo form_input('range_to', set_value('range_to',$row->range_to), 'class="form-control" placeholder="0" style="display:inline-block;width:75px;"'.(empty($row->range_to)?'disabled':''));?>
+                <?php echo form_dropdown('range_currency',$currencies,$row->range_currency, 'id="dipRangeCurrency" class="form-control"'); ?>
+                </div>
+                
+              </div>
+            </div>
+            <style>
+              #dip-grang button.ui-multiselect,#dip-grang select,#dip-grang input {
+                width: 70px;display:inline-block;
+                overflow-x: hidden;
+                vertical-align: middle;
+              }
+              .dip-form-tab > div{
+                margin: 5px 0;
+                background:#eee;
+                padding: 5px;
+              }
+              .dip-form-tab label{margin-right: 10px;}
+              .dip-form-tab label input{margin: 0;}
+            </style>
+            <script>
+            function change_fee(type){
+              if(type==1){
+                $('#dipRang1').show();
+                $('#dipRang1 input').attr('disabled',false);
+                $('#dipRang2').hide();
+                $('#dipRang2 input').attr('disabled',true);
+              }
+              if(type==2){
+                $('#dipRang2').show();
+                $('#dipRang2 input').attr('disabled',false);
+                $('#dipRang1').hide();
+                $('#dipRang1 input').attr('disabled',true);
+              }
+              if(type==3){
+                $('#dipRang2').hide();
+                $('#dipRang2 input').attr('disabled',true);
+                $('#dipRang1').hide();
+                $('#dipRang1 input').attr('disabled',true);
+              }
+            }
+            </script>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipDifficulty">Course Difficulty</label>
+              <div class="col-sm-6 nopd">
+                <?php echo form_dropdown('difficulty',array_combine($dificulties,$dificulties),$row->difficulty, 'id="dipDifficulty" class="form-control"'); ?>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipHandicap">Handicap Limit</label>
+              <div class="col-sm-4 nopd">
+                
+                <?php $handicap_type=array('Enter limit', 'Proficiency Certificate','Handicap Certificate','No');?>
+                  Men <br/>
+                  <?php echo form_input('handicap_men', set_value('handicap_men',$row->handicap_men), 'id="dip-men" class="form-control" style="width:80%;display:inline-block;border: 1px solid #C5C5C5;"'.((!is_numeric($row->handicap_men) && !empty($row->handicap_men))?'readonly':''));?>
+                  <div class="dropdown" style="width:10%;display:inline-block;vertical-align: top;">
+                      <button id="dLabel" class="btn btn-default" style="padding: 9px 5px;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dip-drpdwn" aria-labelledby="dLabel">
+                        <li><span onclick="change_handicap('men',1)">Enter Limit</span></li>
+                        <li><span onclick="change_handicap('men',2)">Proficiency Certificate</span></li>
+                        <li><span onclick="change_handicap('men',4)">Handicap Certificate</span></li>
+                        <li><span onclick="change_handicap('men',3)">No</span></li>
+                      </ul>
+                  </div>
+                
+              </div>
+              <div class="col-sm-4 nopd">
+                  Women <br/>
+                  <?php echo form_input('handicap_women', set_value('handicap_women',$row->handicap_women), 'id="dip-women"class="form-control" style="width:85%;display:inline-block;border: 1px solid #C5C5C5;"'.((!is_numeric($row->handicap_women) && !empty($row->handicap_women))?'readonly':''));?>
+                  <div class="dropdown" style="width:10%;display:inline-block;vertical-align: top;">
+                      <button id="dLabel" class="btn btn-default" style="padding: 9px 5px;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu dip-drpdwn" aria-labelledby="dLabel">
+                        <li><span onclick="change_handicap('women',1)">Enter Limit</span></li>
+                        <li><span onclick="change_handicap('women',2)">Proficiency Certificate</span></li>
+                        <li><span onclick="change_handicap('women',4)">Handicap Certificate</span></li>
+                        <li><span onclick="change_handicap('women',3)">No</span></li>
+                      </ul>
+                  </div>
+                
+              </div>
+            </div>
+            <script>
+            function change_handicap(cat,type){
+              if(type==1){
+                $('#dip-'+cat).val('');
+                $('#dip-'+cat).attr('readonly',false);
+                $('#dip-'+cat).focus();
+              }
+              if(type==2){
+                $('#dip-'+cat).val('Proficiency Certificate');
+                $('#dip-'+cat).attr('readonly',true);
+              }
+              if(type==3){
+                $('#dip-'+cat).val('No');
+                $('#dip-'+cat).attr('readonly',true);
+              }
+              if(type==4){
+                $('#dip-'+cat).val('Handicap Certificate');
+                $('#dip-'+cat).attr('readonly',true);
+              }
+            }
+            <?php if(!isset($row->handicap_men)){
+              echo "change_handicap('men',3);";
+            } ?>
+            <?php if(!isset($row->handicap_women)){
+              echo "change_handicap('women',3);";
+            } ?>
+            </script>
+            <style>
+            .dip-drpdwn{
+              left: auto;
+              right: 0;
+              width: 240px;
+              border:1px solid #66afe9;
+              -webkit-border-radius: 0;
+                      border-radius: 0;
+              padding: 2px;
+              webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+            }
+            .dip-drpdwn span,.dip-drpdwn span:hover{
+              font-size: 0.9em;
+              background: none;
+              border:none;
+              color: #000;
+              text-align: left;
+              padding:5px 10px;
+              width: 100%;
+              display: block;
+              cursor: pointer;
+            }
+            .dip-drpdwn span:hover{
+              background: #66AFE9;
+              padding:5px 10px;
+            }
+            </style>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipWelcome">Visitor Welcome</label>
+              <div class="col-sm-6 nopd">
+                <?php echo form_dropdown('welcome_option',array_combine($welcome_options,$welcome_options),$row->welcome_option, 'id="dipWelcome" class="form-control"'); ?>
+                 
+                <div id="dipWelcomeSubOption" style="background:#eee;padding:5px;<?php if(isset($row->welcome_option) && $row->welcome_option!='Everyday'){echo 'display:none;';}?>">
+                  except the following days
+                  <?php echo form_multiselect('welcome_option2[]',array_combine($weekdays,$weekdays),$row->welcome_option2, 'id="dipWelcome2" '); ?>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label" for="dipOpen">Opening Season</label>
+              <div class="col-sm-7 form-inline dip-form-tab nopd" id="dip-grang">
+                
+                <!--opening options-->
+                <label><?php echo form_radio('opening_opt','1',($row->open_from!='Weather dependent'?true:false),'style="width:auto;" onclick="change_opening(1)"'); ?> Date</label>
+                <label><?php echo form_radio('opening_opt','2',($row->open_from=='Weather dependent'?true:false),'style="width:auto;" onclick="change_opening(2)"'); ?> Weather dependent</label>                
+                
+                <div id="dipOpen1" <?php echo ($row->open_from=='Weather dependent'?'style="display:none;"':''); ?>>
+                From <?php echo form_input('open_from', set_value('open_from',$row->open_from), 'class="form-control dipDate" placeholder="" style="display:inline-block;width:130px;" required '.($row->open_from=='Weather dependent'?'disabled':''));?>
+                to <?php echo form_input('open_to', set_value('open_to',$row->open_to), 'class="form-control dipDate" placeholder="" style="display:inline-block;width:130px;"'.($row->open_from=='Weather dependent'?'disabled':''));?>
+                </div>
+              </div>
+            </div>
+            <script>
+            function change_opening(type){
+              if(type==1){
+                $('#dipOpen1').show();
+                $('#dipOpen1 input').val('').attr('disabled',false);
+              }
+              if(type==2){
+                $('#dipOpen1').hide();
+                $('#dipOpen1 input').attr('disabled',true);
+              }
+            }
+            </script>
+          </fieldset>
+        </div>
+        <div class="col-sm-5">
+          <fieldset >
+            <legend>Course Rating and Slope:</legend>
+              <?php foreach ($ratings as $key => $value):?>
+                <div class="dip-rating">
+                  <i class="fa fa-circle" style="color:<?=$value;?>;"></i>
+                  <div class="" >
+                    <label for="dipCR<?=$value;?>">Course Rating</label>
+                    <?php echo form_input('cr['.$key.']', set_value('cr['.$key.']',(isset($row->cr[$key])?$row->cr[$key]:'')), 'class="form-control" id="dipCR'.$value.'" placeholder="000"');?>
+                  </div>
+                  <div class="" >
+                    <label for="dipSlope<?=$value;?>">Slope</label>
+                    <?php echo form_input('slope['.$key.']', set_value('slope['.$key.']',(isset($row->slope[$key])?$row->slope[$key]:'')), 'class="form-control" id="dipSlope'.$value.'" placeholder="000"');?>
+                  </div>
+                </div>
+              <?php endforeach;?>
+          </fieldset>
+        </div>
+      </div>
+      <style>
+      .dip-rating{
+        padding: 5px;
+        background: #F3F3F3;
+        margin-bottom: 5px;
+        -webkit-border-radius: 8px;
+                border-radius: 8px;
+      }
+      .dip-rating i{
+        font-size: 1.4em;vertical-align: sub;text-shadow: 0 0 1px black;
+        width: 5%;display: inline-block;
+        margin:0 2.5%;
+      }
+       .dip-rating >div{
+         width: 40%;
+         display: inline-block;
+       }
+      </style>
+      <br/>
+    </div>
+    <div class="dip-form-foot text-center">
+      <?php echo form_submit('submit', 'Save','class="btn btn-success"'); ?>&nbsp;
+      <a href="<?php echo site_full_url('golfclub/nexttee/courses');?>" class="btn btn-default" >Cancel</a>
+    </div>
+  <!-- </form> -->
+  <?php echo form_close();?>
+</section>
+<style>
+@media (min-width: 768px){
+  .form-group div.nopd{padding: 0 2px;}
+}
+button.ui-multiselect {
+    height: 35px;
+    overflow-y: hidden;
+    line-height: 1.5;
+}
+#ui-datepicker-div {
+    z-index: 10000 !important;
+    }
+#ui-datepicker-div .ui-datepicker-year{
+  display: none;
+}
+.chk-fac img {
+    width: 50%;
+    float: right;
+    max-width: 60px;
+}
+</style>
+<script>
+$(document).ready(function() {
+  $("select:not([multiple])").multiselect({
+     multiple: false,
+     header: "Select an option",
+     noneSelectedText: "Select",
+     selectedList: 1,
+  });
+  $('#dipWelcome').multiselect({
+    click: function(event, ui){
+      if(ui.value == 'Everyday'){
+        $('#dipWelcomeSubOption').show();
+      }else{
+        $('#dipWelcomeSubOption').hide();
+      }
+    },
+  });
+  $("#dipWelcome2").multiselect();
+  $('.dipDate').datepicker( {
+      dateFormat: 'dd MM'
+  });
+});
+</script>

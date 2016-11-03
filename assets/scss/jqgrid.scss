@@ -1,0 +1,141 @@
+$bg-clr:rgba(black, 0.02);
+$bg-clr-dark:rgba(black, 0.08);
+
+// added styles for jqGrid
+.ui-jqgrid{
+	&.ui-widget-content{
+		border:1px solid $bg-clr;
+	}
+	.ui-widget-content{
+		border:1px solid $bg-clr-dark;
+	}
+	.ui-jqgrid-hbox{
+		float: none;
+		padding: 0;
+	}
+	.ui-jqgrid-bdiv{
+		background: transparent;
+		@media (min-width:1080px){
+			overflow-x: hidden;
+		}
+	}
+	//header
+	.ui-jqgrid-htable th {
+	    height: 35px;
+	    padding: 0 2px 0 2px;
+	   
+	}
+	.ui-jqgrid-htable{
+		 border-bottom: 2px solid $bg-clr-dark;
+	}
+	.ui-jqgrid-view{
+		font-size: inherit;
+		// buttons custom
+		a.dip-ibtn,button.dip-ibtn{
+			font-size: 0;
+			padding: 5px;
+			color: #FFF;
+			i{font-size: 11px;}
+			// display: none;
+		}
+	}
+	.ui-state-hover{
+		background: rgba(0, 126, 247, 0.08);
+		// > td > .dip-ibtn{
+		// 	display: inline-block;
+		// }
+	}
+	tr.jqgrow td{
+		height: 35px;
+		padding: 5px;
+		border: none;
+		border-bottom: 1px solid rgba(black,.02);
+		text-align: center;
+	}
+	// sub-grid
+	.ui-subgrid{
+		background: $bg-clr-dark;
+		.ui-jqgrid-htable th{
+			height: 20px;
+			background: ghostwhite;	
+		}
+		.ui-jqgrid-hdiv{
+			// display: none;
+		}
+		.ui-widget-content{
+			background: transparent;
+			border: none;
+		}
+		.ui-jqgrid-btable tr td{
+			background: #FFF;
+			&.subgrid-cell {
+			    background-color: inherit;
+			}
+		}
+		.ui-jqgrid-pager{
+			background: #EBEBEB;
+		}
+		.ui-jqgrid-btable .ui-pager-control  tr{
+			background: transparent;
+		}
+	}
+	.ui-sgcollapsed{width:10px;}
+	.ui-subgrid td.subgrid-cell {
+		background: rgba(123, 120, 120, 0.17);
+		span{display: none;}
+	}
+	.dip-switch{
+		margin: 0 auto;
+	}
+}
+.ui-widget {
+    font-family: inherit;
+    font-size: inherit;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl, .ui-corner-right, .ui-corner-tr, .ui-corner-bottom, .ui-corner-bl, .ui-corner-br {
+    border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    -khtml-border-radius:0;
+}
+//default header styles
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	background: $bg-clr;
+	border: none;
+	.s-ico{
+		display: inline;
+	}
+}
+// pagination
+.ui-jqgrid .ui-jqgrid-pager{
+	font-size: inherit;
+	padding: 5px !important;
+	border-top: 2px solid $bg-clr-dark;
+	// pagination buttons
+	.ui-pg-button{
+		.ui-pg-div{
+			font-weight: bold;
+			padding: 5px;
+			border: none;
+			margin: 0;
+		}
+		&.ui-state-hover{
+			border: none;
+			margin: 0;
+		}
+	}
+	.ui-pg-table td{padding: 0;}
+}
+.ui-jqgrid .ui-state-hover,.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: transparent;
+}
+.ui-jqgrid .ui-pg-input, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-input,.ui-jqgrid .ui-pg-selbox, .ui-jqgrid .ui-jqgrid-toppager .ui-pg-selbox{
+	height: auto;
+}
+.ui-jqgrid .ui-jqgrid-view button.dip-ibtn-up, .ui-jqgrid .ui-jqgrid-view button.dip-ibtn-down{
+	color: #000;
+}
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary{
+	background: rgba(228, 228, 228, 0.1);
+	opacity: 1;
+}
