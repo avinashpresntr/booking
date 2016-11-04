@@ -41,6 +41,9 @@ $route['default_controller'] = "login";
 $route['404_override'] = '';
 $route['api/news/(:num)'] =  "api/news/index/$1";
 $route['api/nexttee/(:any)'] = "api_nt/$1";
+
+$route['presntr'] = "frontend";
+
 //$route['master/hotel/(:num)'] = "hotel/profile/index/$1";
 
 /* End of file routes.php */

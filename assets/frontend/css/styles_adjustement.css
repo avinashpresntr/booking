@@ -1,0 +1,386 @@
+.nav-lang.disconnect.disconnect-mobile{
+    display:none;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.loginLabel{
+    margin-right: 15px; margin-left: 10px; margin-top: 4px; color: #333; text-transform: uppercase; font-weight:bold;
+}
+.recap-mobile-min{
+    min-width:250px;
+}
+.gc-detail-resa-mobile{
+    font-size:13px;
+}
+@media screen and (max-width:820px){
+
+    #myBookingsTable{
+        display: block;
+        overflow-y: scroll;
+    }
+
+    .myBookingsTableDetail {
+        display: block;
+        overflow-y: scroll;
+    }
+
+    .loginLabel{
+       float:left; width: 100%;
+    }
+    .navbar-brand img{
+        max-width: 55px;
+    }
+    .nav-lang.disconnect.disconnect{
+        display:none;
+    }
+    .nav-lang.disconnect.disconnect-mobile{
+        display:block;
+    }
+    .adminMenu {
+        display: none;
+    }
+    header .container {
+        padding-top: 0!important;
+    }
+    .gc-onglet-connexion{
+        margin-bottom: 15px;
+    }
+    .disconnect_btn{
+        margin-top: 10px;
+        padding: 15px;
+    }
+}
+@media screen and (max-width:500px){
+    .loginLabel{
+        float:left; width: 100%;
+    }
+    .navbar-brand img{
+        max-width: 55px;
+    }
+    .nav-lang.disconnect.disconnect-mobile .disconnect-input{
+        max-width: 44.3%;
+    }
+    .bookingBtn.btn{
+        font-size:14px;
+    }
+    .gc-planning-journ{
+        margin-top:40px;
+    }
+    .navbar-brand img{
+        max-width: 55px;
+    }
+    .gc-onglet-connexion{
+        margin-bottom: 15px;
+    }
+    .disconnect_btn{
+        margin-top: 10px;
+        padding: 15px;
+    }
+    .recap-mobile-min{
+        min-width:1px;
+    }
+}
+
+
+
+/********* ajustement v1.2 *********/
+
+.onglets-mobile{
+    display:none;
+}
+.cg-modal-reservation .close{
+    padding: 2px 10px 2px 10px;
+}
+.nav-lang-mobile{
+    display:none;
+}
+.nav-user-mobile{
+    display:none;
+}
+@media (max-width: 820px){
+    header .navbar-brand img {
+        width: 100%;
+        max-width: 80px;
+    }
+    .nav-lang {
+        position:absolute;
+        right:0;
+    }
+    .gc-titre-coin .after-titre {
+        display:none;
+    }
+    .gc-titre-coin {
+        margin-bottom: 25px;
+    }
+
+    .footerCoord {
+        float: left;
+        width: 100%;
+        background-color: #f0eff0;
+        color: black;
+        text-align: center;
+        padding: 25px;
+        z-index: 11;
+    }
+    footer .copyright-footer {
+        position: relative;
+        color: #ccc;
+        font-size: 11px;
+        text-align: right;
+        margin-top: 15px;
+    }
+    .gc-select-jour-planning{
+        display:none!important;
+    }
+    .gc-onglets {
+        display:none;
+    }
+    input.datepicker {
+        width:100%;
+    }
+    select#parcours{
+        width:100%;
+    }
+    .gc-search{
+        margin-bottom:-15px;
+    }
+    .gc-search .form-search {
+        padding: 0;
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    .gc-search label{
+        margin-top: 6px;
+    }
+    .onglets-mobile{
+        position:absolute;
+        bottom:0;
+        right:0;
+        display:block;
+    }
+    .onglets-mobile a{
+        color:#fff!important;
+        font-family: futura-bold,Helvetica,Arial,sans-serif;
+        text-align:center;
+        float:right;
+        background:#f8cc06;
+        padding:8px 10px;
+        color:#111!important;
+        min-width:80px;
+    }
+    .onglets-mobile a.active, .onglets-mobile a:hover{
+        color:#f8cc06!important;
+        background:#fff;
+    }
+    .onglets-mobile a span{
+        color:#111!important;
+        text-transform:uppercase;
+        font-size: 11px;
+    }
+
+    .login-mobile{
+        text-align:center;
+
+        background:transparent;
+        padding:10px 10px;
+        position:absolute;
+        top:0;
+        right:130px;
+        color:#111!important;
+        text-transform:uppercase;
+        display:none;
+    }
+    .login-mobile a{
+        color:#fff!important;
+        font-family: futura-bold,Helvetica,Arial,sans-serif;
+    }
+    .login-mobile a span{
+        color:#111!important;
+        text-transform:uppercase;
+    }
+    .gc-planning-journ .gc-creaneau-horaire{
+        border:none;
+        border:none;
+        margin-left:-8px;
+        margin-right:-8px;
+        margin-bottom: 20px;
+    }
+    .gc-creaneau-horaire .col-xs-12{
+        padding-left:8px!important;
+        padding-right:8px!important;
+        margin-bottom:16px!important;
+    }
+    .gc-planning-journ{
+        margin-top:40px;
+    }
+    .gc-planning-journ .gc-titre-heure {
+        top: -22px;
+    }
+    .nav-lang{
+        display:none;
+    }
+    .nav-lang-mobile{
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        z-index: 2;
+    }
+
+    .nav-user-mobile{
+        display:block;
+        position:absolute;
+        left:0;
+        top:0;
+        background: white;
+        padding: 4px;
+        z-index: 2;
+        border-right: 1px solid #f8cc06;
+        border-bottom: 1px solid #f8cc06;
+    }
+
+    .nav-lang-mobile-button{
+        background: #fff url(../img/down-triangle-gray.png) no-repeat 30px center;
+        color:#111;
+        font-size: 14px;
+        padding:4px 23px 4px 12px;
+        width:52px;
+        cursor:pointer;
+    }
+    .lang-mobile-dropdown{
+        display:none;
+        position:absolute;
+        right:0;
+        top:28px;
+        background:#f8cc06;
+        padding:4px 12px 4px 12px;
+        width:95px;
+    }
+    .lang-mobile-dropdown a{
+        display:inline-block;
+        margin-left:10px;
+        color:#111;
+        cursor:pointer;
+    }
+    .lang-mobile-dropdown a:first-child{
+        margin-left:0;
+    }
+    .search-hide-mobile{
+        display:none;
+    }
+}
+@media (max-width: 767px){
+    input#select-create-account{
+        width:20px;
+    }
+    #my-sample-form div.form-line.row.clearfix{
+        text-align:left!important;
+    }
+    #my-sample-form div.form-line.row.clearfix .col-xs-21{
+    width:100%!important
+    }
+
+
+    input#accept_cond_check{
+        width:20px;
+    }
+    .gc-paiement .conditions{
+        text-align:left;
+    }
+}
+
+.ico-player{
+    opacity:1;
+}
+/********* end ajustement v1.2 *********/
+
+/********* ajustement v1.3 *********/
+.mobile-connect.mobile-connect-2{
+    display:none;
+}
+@media (max-width: 767px){
+    .cg-modal-reservation table td{
+        line-height: 1.3em;
+        padding: 15px 20px 15px 0;
+    }
+    .payment-choices {
+        margin-top: 0;
+        float: none;
+        width: 100%;
+    }
+    .gc-form-paiement.saferPay{
+        margin-top:0!important;
+    }
+    .complementary_products {
+        margin-top: 0;
+    }
+    .select-product-complementary {
+        float:none;
+    }
+    .payment-choice {
+        float: none!important;
+        width: 100%!important;
+        text-align: center!important;
+        padding: 15px!important;
+    }
+    .payment-choices {
+        float: none!important;
+    }
+    header .container {
+        padding: 0;
+    }
+    .container>.navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .disconnect {
+        margin-right: 0!important;
+        padding:10px!important;
+    }
+    .mobile-connect.mobile-connect-2{
+        position:relative!important;
+        visibility: visible;
+        z-index:100000;
+        float:none!important
+    }
+    .mobile-connect.mobile-connect-2 span{
+        display:block;
+        margin-right: 0!important;
+        margin-left: 0!important;
+        margin-top: 0!important;
+        margin-bottom: 8px!important;
+
+    }
+    .mobile-connect{
+        visibility: hidden;
+    }
+    .mobile-connect.mobile-connect-2 input[type=submit]{
+        /*display:none;*/
+        width:100%;
+        margin:0;
+    }
+    .mobile-connect.mobile-connect-2 input[type=text], .mobile-connect.mobile-connect-2 input[type=email], .mobile-connect.mobile-connect-2 input[type=password]{
+    padding: 6px;
+    width: 100%;
+    margin-bottom: 1px;
+    }
+    .adminMenu {
+        display:none!important;
+    }
+
+
+
+
+
+}
+/********* end ajustement v1.3 *********/
+
+@media (max-width: 1300px){
+    .ico-player{
+        width: 20px;
+    }
+}
+
+

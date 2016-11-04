@@ -19,13 +19,15 @@ date_default_timezone_set('Europe/Zurich');
  *
  */
 switch (dirname(__FILE__)){
-	case 'D:\localhost\golfapp': //path to public_html in localhost
+	//case 'D:\localhost\golfapp': //path to public_html in localhost
+	case 'D:\xampp\htdocs\booking': //path to public_html in localhost
 		define('ENVIRONMENT', 'development');
 		break;
 	default:
 		define('ENVIRONMENT', 'production');
 		break;
 }
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -43,6 +45,7 @@ if (defined('ENVIRONMENT'))
 			error_reporting(E_ALL | E_STRICT);
 			ini_set('upload_max_filesize', '100M');
 			ini_set('post_max_size', '100M');
+			error_reporting(0);
 		break;
 		case 'testing':
 		case 'production':
